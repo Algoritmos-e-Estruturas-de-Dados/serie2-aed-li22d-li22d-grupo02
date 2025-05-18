@@ -18,6 +18,7 @@ package serie2.part3
  * Create an empty doubly linked list with a sentinel node.
  * @return a doubly linked list with a sentinel node empty.
  */
+
 fun <E> emptyList(): Node<E> {
     val empty = Node<E>()
     empty.previous = empty
@@ -67,10 +68,10 @@ fun <E> Node<E>.toList(): List<E> {
     val res: MutableList<E> = mutableListOf<E>()
     var curr = this.next
     while ( curr !== this ) {
-       curr?.let {
-          res.add(it.value)
-          curr = it.next
-       }
+        curr?.let {
+            res.add(it.value)
+            curr = it.next
+        }
     }
     return res
 }
@@ -91,8 +92,8 @@ fun <E> nodeToList(l: Node<E>?): List<E> {
     val res: MutableList<E> = mutableListOf<E>()
     var curr = l
     while ( curr != null ) {
-       res.add(curr.value)
-       curr = curr.next
+        res.add(curr.value)
+        curr = curr.next
     }
     return res
 }
