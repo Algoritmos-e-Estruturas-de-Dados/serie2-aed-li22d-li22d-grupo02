@@ -4,7 +4,10 @@ import java.util.HashMap
 
 
 object ProcessPointsCollectionsI1 {
+    // criar o  mapa onde cada ponto (Point) é a key,
+    // e o valor é uma lista de nomes de ficheiros onde esse ponto aparece.
     val map = HashMap<Point, List<String>>()
+
 
 
     // Recebe como parâmetro dois ficheiros de texto( file 1 e file 2 )
@@ -13,11 +16,11 @@ object ProcessPointsCollectionsI1 {
         // leitura do primeiro ficheiro
         val readerfile1 = createReader(file1)
         readerfile1.forEachLine { l ->
-            val i = l.trim().split(" ")
+            val i = l.trim().split(" ") // divide cada linha do ficheiro
             if ( "v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
                 val x = i[2].toFloat()
                 val y = i[3].toFloat()
-                val point = Point(x, y)
+                val point = Point(x, y) // cria o key
                 val list = map[point]
                 var listup: List<String>
                 if (list == null) {
@@ -35,11 +38,11 @@ object ProcessPointsCollectionsI1 {
         // leitura do segundo ficheiro
         val readerfile2 = createReader(file2)
         readerfile2.forEachLine { l ->
-            val i = l.trim().split(" ")
+            val i = l.trim().split(" ") // divide cada linha do ficheiro
             if ("v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
                 val x = i[2].toFloat()
                 val y = i[3].toFloat()
-                val point = Point(x, y)
+                val point = Point(x, y) //cria o key
                 val list = map[point]
                 var listup: List<String>
                 if (list == null) {

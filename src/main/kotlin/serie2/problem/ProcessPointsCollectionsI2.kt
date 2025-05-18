@@ -6,16 +6,16 @@ import serie2.part4.AEDHashMAP
 object ProcessPointsCollectionsI2 {
     val map = AEDHashMAP<Point, File>()
 
-    // Recebe como parâmetro dois ficheiros de texto( file 1 e file 2 )
+    // Rrcebe como parâmetro dois ficheiros de texto( file 1 e file 2 )
     fun load(file1: String, file2: String) {
         // ler o primeiro ficheiro
         val readerfile1 = createReader(file1)
         readerfile1.forEachLine { l ->
-            val i = l.trim().split(" ")
+            val i = l.trim().split(" ") //  divide cada linha do ficheiro
             if ( "v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
                 val x = i[2].toFloat()
                 val y = i[3].toFloat()
-                val point = Point(x, y)
+                val point = Point(x, y) // cria a chave
                 val list = map.get(point)
                 if (list == null) {
                     map.put(point, File(file1 = true, file2 = false))
@@ -28,11 +28,11 @@ object ProcessPointsCollectionsI2 {
 
         val readerfile2 = createReader(file2)
         readerfile2.forEachLine { l ->
-            val i = l.trim().split(" ")
+            val i = l.trim().split(" ") // divide cada linha do ficheiro
             if ( "v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
                 val x = i[2].toFloat()
                 val y = i[3].toFloat()
-                val point = Point(x, y)
+                val point = Point(x, y) // cria a chave
                 val list = map.get(point)
                 if (list == null) {
                     map.put(point, File(file1 = false, file2 = true))
