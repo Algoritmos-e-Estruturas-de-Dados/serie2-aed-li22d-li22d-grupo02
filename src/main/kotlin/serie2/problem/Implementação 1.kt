@@ -2,7 +2,7 @@ package serie2.problem
 import kotlin.time.Duration
 import kotlin.time.measureTime
 
-data class Point (val x: Int, val y: Int)
+data class Point (val x: Float, val y: Float)
 
 fun main() {
 

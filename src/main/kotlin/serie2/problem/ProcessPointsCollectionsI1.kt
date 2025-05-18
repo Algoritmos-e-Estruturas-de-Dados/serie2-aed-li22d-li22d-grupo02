@@ -15,8 +15,8 @@ object ProcessPointsCollectionsI1 {
         readerfile1.forEachLine { l ->
             val i = l.trim().split(" ")
             if ( "v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
-                val x = i[2].toInt()
-                val y = i[3].toInt()
+                val x = i[2].toFloat()
+                val y = i[3].toFloat()
                 val point = Point(x, y)
                 val list = map[point]
                 var listup: List<String>
@@ -37,8 +37,8 @@ object ProcessPointsCollectionsI1 {
         readerfile2.forEachLine { l ->
             val i = l.trim().split(" ")
             if ("v" == i[0] && i.size >= 4) { // v - i[0] , id - i [1], x - i[2]  e y - i[3] i.size = 4
-                val x = i[2].toInt()
-                val y = i[3].toInt()
+                val x = i[2].toFloat()
+                val y = i[3].toFloat()
                 val point = Point(x, y)
                 val list = map[point]
                 var listup: List<String>
