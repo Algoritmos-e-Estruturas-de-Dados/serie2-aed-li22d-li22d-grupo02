@@ -9,19 +9,19 @@ data class File(val file1: Boolean , var file2: Boolean)
 fun main() {
 
     val elapsed: Duration = measureTime {
-        ProcessPointsCollectionsI1.load("Files1/F1r.co", "Files2/F6r.co")
+        ProcessPointsCollectionsI2.load("Files1/F1r.co", "Files2/F6r.co")
     }
 
     val elapsed1: Duration = measureTime {
-        ProcessPointsCollectionsI1.union("outputU.co")
+        ProcessPointsCollectionsI2.union("outputU.co")
     }
 
     val elapsed2: Duration = measureTime {
-        ProcessPointsCollectionsI1.intersection("outputI.co")
+        ProcessPointsCollectionsI2.intersection("outputI.co")
     }
 
     val elapsed3: Duration = measureTime {
-        ProcessPointsCollectionsI1.difference(" outputD.co")
+        ProcessPointsCollectionsI2.difference(" outputD.co")
     }
 
     println ("load duration : $elapsed ")
